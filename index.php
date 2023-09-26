@@ -41,7 +41,13 @@ $hotels = [
 ];
 
 foreach ($hotels as $hotel) {
+
 }
+
+
+
+
+
 
 
 
@@ -68,20 +74,34 @@ foreach ($hotels as $hotel) {
 </head>
 
 <body>
+    <div class="wrapper bg-success py-5">
 
-    <?php foreach ($hotels as $hotel): ?>
-    <ul>
-        <?php foreach ($hotel as $key => $value): ?>
-        <li>
-            <?= $key ?>:
-            <?= $value ?>
+        <h1 class="text-center text-light mb-5">I NOSTRI HOTEL</h1>
 
-        </li>
-        <?php endforeach; ?>
+        <table class="table table-dark table-hover container">
+            <thead>
+                <tr>
+                    <?php foreach ($hotel as $key => $value): ?>
+                    <th scope="col">
+                        <?= strtoupper($key) ?>
+                    </th>
+                    <?php endforeach; ?>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($hotels as $hotel): ?>
+                <tr>
+                    <?php foreach ($hotel as $key => $value): ?>
+                    <td>
+                        <?= $value ?>
+                    </td>
+                    <?php endforeach; ?>
+                </tr>
+                <?php endforeach; ?>
 
-
-    </ul>
-    <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 
 
 </body>
