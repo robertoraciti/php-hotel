@@ -41,8 +41,10 @@ $hotels = [
 ];
 
 foreach ($hotels as $hotel) {
-
+    foreach ($hotel as $key => $value) {
+    }
 }
+
 
 
 
@@ -89,11 +91,26 @@ foreach ($hotels as $hotel) {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($hotels as $hotel): ?>
+                <?php foreach ($hotels as $hotel):
+                    if ($hotel['parking'] == true) {
+                        $hotel['parking'] = 'Yes';
+
+
+
+
+                    } else {
+                        $hotel['parking'] = 'No';
+
+                    }
+                    ?>
                 <tr>
-                    <?php foreach ($hotel as $key => $value): ?>
+                    <?php foreach ($hotel as $key => $value):
+                            ?>
+
                     <td>
+
                         <?= $value ?>
+
                     </td>
                     <?php endforeach; ?>
                 </tr>
